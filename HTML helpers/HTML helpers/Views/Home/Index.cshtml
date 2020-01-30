@@ -16,6 +16,13 @@
 <!-- или можно вызвать так -->
 @ListHelper.CreateList(Html, countries)
 
-
+<h3>Html.ActionLink("Sam", "GetUser", "Home", new { name = "Sam", id = 12 }, new { id = "sam", class = "link" })</h3>
 @Html.ActionLink("Sam", "GetUser", "Home", new { name = "Sam", id = 12 }, new { id = "sam", @class = "link" })
+
+<h3>Html.RouteLink("Sam", new { controller = "Home", action = "GetUser", name = "Sam", id = 12 }, new { id = "sam", class = "link" })</h3>
 @Html.RouteLink("Sam", new { controller = "Home", action = "GetUser", name = "Sam", id = 12 }, new { id = "sam", @class = "link" })
+
+<h3>Url.Action("GetUser", "Home", new { name = "Тоm", id = 10 }, null)</h3>
+<a href='@Url.Action("GetUser", "Home", new { name = "Тоm", id = 10 }, null)'>Ссылка</a>
+
+<script src='@Url.Content("~/lib/jquery/dist/jquery.js")'></script>

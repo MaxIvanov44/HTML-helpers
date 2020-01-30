@@ -57,5 +57,11 @@ namespace HTML_helpers.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+        public IActionResult About()
+        {
+            string contentUrl = Url.Content("~/lib/jquery/dist/jquery.js");
+            string actionUrl = Url.Action("Index", "Home");
+            return Content(actionUrl);
+        }
     }
 }
