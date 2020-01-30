@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@{
+    string[] cities = new string[] { "Лондон", "Париж", "Берлин" };
+    string[] countries = new string[] { "Великобритания", "Франция", "Германия" };
+}
+@using HTML_helpers.App_Code
+
+<h3>Города</h3>
+@Html.CreateList(cities)
+<br />
+<h3>Страны</h3>
+<!-- или можно вызвать так -->
+@ListHelper.CreateList(Html, countries)
+
+
+@Html.ActionLink("Sam", "GetUser", "Home", new { name = "Sam", id = 12 }, new { id = "sam", @class = "link" })
+@Html.RouteLink("Sam", new { controller = "Home", action = "GetUser", name = "Sam", id = 12 }, new { id = "sam", @class = "link" })
